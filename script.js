@@ -150,3 +150,22 @@ function generarExcusa() {
     document.getElementById("excusa").innerText = resultado;
 }
 
+function añadirExcusa() {
+    const nuevoSujeto = document.getElementById("sujeto").value;
+    const nuevaAccion = document.getElementById("accion").value;
+    const nuevoObjeto = document.getElementById("objeto").value;
+
+    if (sujeto && accion && objeto) {
+        subjects.push(nuevoSujeto);
+        acciones.push(nuevaAccion);
+        objetos.push(nuevoObjeto);
+
+        document.getElementById("sujeto").value = "";
+        document.getElementById("accion").value = "";
+        document.getElementById("objeto").value = "";
+
+        alert("¡Excusa añadida con éxito!");
+    } else {
+        alert("Por favor, completa todos los campos.");
+    }
+}
