@@ -56,41 +56,41 @@ let subjects = ["Mi perro",
     "El T-Rex que se pasó de moda"];
 
 let acciones = ["se comió", "tiró","perdió", "escondió","rompió",
-    "lanzó","atrapó", "pintó","borró","escribió mal","ocultó","destruyó", "se metió en una dimensión paralela",
+    "lanzó","atrapó a", "pintó","borró","escribió mal","ocultó","destruyó", "se metió en una dimensión paralela con",
     "se teletransportó al futuro",
     "se convirtió en un agujero negro",
-    "me lanzó un hechizo",
-    "me lanzó un rayo láser",
-    "me invadió un ejército de hormigas mutantes",
-    "me dio un golpe en la cabeza con un meteoro",
-    "me absorbió la mente",
-    "me secuestró un ejército de clones",
-    "me dejó atrapado en un bucle temporal",
-    "me robó el alma",
-    "me envió a Marte","se transformó en un platillo volador",
-    "me desafió a un duelo de baile",
-    "me regaló un agujero negro para mi cumpleaños",
-    "me convirtió en una pelota de ping pong",
-    "me pintó una cebra en el ojo",
-    "me envió un mensaje desde 3025",
+    "me lanzó un hechizo de",
+    "me lanzó un rayo láser de",
+    "me invadió un ejército de hormigas mutantes con ayuda de",
+    "me dio un golpe en la cabeza con un meteoro y",
+    "me absorbió la mente con",
+    "me secuestró un ejército de clones al servicio de",
+    "me dejó atrapado en un bucle temporal por culpa de",
+    "me robó el alma para un experimento de",
+    "me envió a Marte con ayuda de","se transformó en un platillo volador e hizo un aterrizaje forzoso en",
+    "me desafió a un duelo de baile con",
+    "me regaló un agujero negro para mi cumpleaños de",
+    "me convirtió en una pelota de ping pong con",
+    "me pintó una cebra en el ojo con",
+    "me envió un mensaje desde 3025 con ayuda de",
     "me sacó un selfie con el fin del mundo",
     "se olvidó de cómo caminar y comenzó a flotar",
     "me usó como control remoto",
     "me metió en una máquina del tiempo y me dejó en el 1500",
     "me secuestró para un tour por la luna",
-    "me abrazó y me hizo desaparecer",
-    "se desmayó tras un duelo de esgrima",
+    "me abrazó y me hizo desaparecer en",
+    "se desmayó tras un duelo de esgrima por culpa de",
     "se olvidó de asistir a la gala por estar afinando su violín Stradivarius",
     "se retiró a su biblioteca secreta a leer los escritos de Voltaire",
-    "me pidió un favor mientras tomaba té con la reina",
+    "me pidió un favor mientras tomaba té con la reina encima de",
     "se embarcó en una expedición a las Indias Orientales",
     "se deshizo de su monóculo tras una broma inapropiada",
     "se pasó la tarde en su invernadero cultivando rosas blancas",
-    "me desafió a una partida de ajedrez a ciegas",
+    "me desafió a una partida de ajedrez a ciegas para demostrar su inteligencia a",
     "me pidió prestado un sombrero de copa alta para una fiesta benéfica",
     "se escapó con un retrato de la corte de Versalles",
     "se enredó con un espadón en una batalla de estilo en el jardín",
-    "se despidió de mí con un lazo de seda mientras subía a su carruaje"
+    "se despidió de mí con un lazo de seda mientras subía a su carruaje junto a",
     ];   
 let objetos = [
         "mis deberes",
@@ -142,12 +142,17 @@ let objetos = [
     ];
 
 function generarExcusa() {
+    const excusa = document.getElementById('excusa');
     const sujeto = subjects[Math.floor(Math.random() * subjects.length)];
     const accion = acciones[Math.floor(Math.random() * acciones.length)];
     const objeto = objetos[Math.floor(Math.random() * objetos.length)];
 
-    const resultado = `${sujeto} ${accion} con ${objeto}.`;
-    document.getElementById("excusa").innerText = resultado;
+    const resultado = `${sujeto} ${accion} ${objeto}.`;
+
+    if (resultado) {
+        excusa.textContent = resultado;
+        excusa.style.display = 'block'; // Mostrar el párrafo cuando tenga texto
+    }
 }
 
 function añadirExcusa() {
@@ -155,7 +160,7 @@ function añadirExcusa() {
     const nuevaAccion = document.getElementById("accion").value;
     const nuevoObjeto = document.getElementById("objeto").value;
 
-    if (sujeto && accion && objeto) {
+    if (nuevoSujeto && nuevaAccion && nuevoObjeto) { // Corregir validación
         subjects.push(nuevoSujeto);
         acciones.push(nuevaAccion);
         objetos.push(nuevoObjeto);

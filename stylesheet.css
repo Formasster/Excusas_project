@@ -67,3 +67,8 @@ input{
     font-weight: bold;
     padding: 5px;
 }
+
+/* Ocultar el párrafo con id excusa inicialmente */
+#excusa {
+    display: none;
+}
