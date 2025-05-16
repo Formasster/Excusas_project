@@ -141,6 +141,25 @@ let objetos = [
     "un chicle que sabe los secretos del universo"
     ];
 
+    const mensajes = [
+        "¡Su excusa ha sido registrada en los archivos reales!",
+        "¡Excusa anotada en el diario del mayordomo!",
+        "¡El rey ha sido informado y se ríe con aprobación!",
+        "¡El comité de excusas absurdas la ha aceptado por unanimidad!",
+        "¡El unicornio diplomático asentó con dignidad!",
+        "¡Un loro con monóculo la recitó en la ópera!",
+        "¡Ha sido añadida al libro dorado de las coartadas nobles!",
+        "¡Una galleta de té la aprobó con una reverencia!",
+        "¡Los fantasmas del castillo la consideran impecable!",
+        "¡Un búho aristócrata la gritó desde una torre!",
+        "¡El Consejo Secreto de las Excusas Elegantes te felicita!",
+        "¡Su señoría, su ingenio supera las expectativas del Parlamento!",
+        "¡Una cabra con capa la memorizó y partió en carruaje!",
+        "¡Ha sido grabada en vitral y colocada en la Catedral de las Justificaciones!",
+        "¡Una doncella medieval se desmayó de lo genial que fue!"
+    ];
+
+
 function generarExcusa() {
     const excusa = document.getElementById('excusa');
     const sujeto = subjects[Math.floor(Math.random() * subjects.length)];
@@ -160,7 +179,7 @@ function añadirExcusa() {
     const nuevaAccion = document.getElementById("accion").value;
     const nuevoObjeto = document.getElementById("objeto").value;
 
-    if (nuevoSujeto && nuevaAccion && nuevoObjeto) { // Corregir validación
+    if (nuevoSujeto && nuevaAccion && nuevoObjeto) { 
         subjects.push(nuevoSujeto);
         acciones.push(nuevaAccion);
         objetos.push(nuevoObjeto);
@@ -169,7 +188,8 @@ function añadirExcusa() {
         document.getElementById("accion").value = "";
         document.getElementById("objeto").value = "";
 
-        alert("¡Excusa añadida con éxito!");
+        const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+        alert(mensaje);
     } else {
         alert("Por favor, completa todos los campos.");
     }
